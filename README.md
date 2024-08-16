@@ -1,40 +1,100 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Shikha Labs Next.js Programming Task
 
-## Getting Started
+## Overview
 
-First, run the development server:
+This project demonstrates a simple Next.js application integrated with Firebase to achieve user authentication and data storage. The app allows users to log in with Gmail, fetch data from a public API, display it on the screen, and save the data to Firebase.
+
+## Features
+
+- **Google Login**: Users can log in using their Gmail accounts through Firebase Authentication.
+- **Fetch Data**: Data is fetched from a public API.
+- **Display Data**: Fetched data is displayed on the screen.
+- **Save Data**: Users can save the displayed data to Firebase.
+
+## Technologies Used
+
+- **Frontend**: Next.js
+- **Backend**: Firebase (Authentication and Realtime Database)
+- **API**: Public API for data fetching
+
+## Setup Instructions
+
+### Prerequisites
+
+- Node.js (v14 or later)
+- Firebase account
+- Google Cloud Project with Firebase enabled
+
+### 1. Clone the Repository
+
+```bash
+git clone
+cd shikha-labs-nextjs-task
+```
+
+### 2. Install Dependencies
+
+```bash
+npm install
+```
+
+### 3. Configure Firebase
+
+1. Go to the [Firebase Console](https://console.firebase.google.com/).
+2. Create a new project or use an existing one.
+3. Add a web app to your Firebase project and copy the Firebase configuration details.
+4. Replace the Firebase configuration in `src/firebase.js` with your own configuration:
+
+```javascript
+const firebaseConfig = {
+  apiKey: "YOUR_API_KEY",
+  authDomain: "YOUR_AUTH_DOMAIN",
+  projectId: "YOUR_PROJECT_ID",
+  storageBucket: "YOUR_STORAGE_BUCKET",
+  messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+  appId: "YOUR_APP_ID",
+  measurementId: "YOUR_MEASUREMENT_ID",
+};
+```
+
+### 4. Start the Development Server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+The app should now be running at `http://localhost:3000`.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+## How to Use
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+1. **Login**: Go to the `/login` page and log in using your Gmail account.
+2. **Fetch Data**: After logging in, you'll be redirected to the home page (`/`) where data is fetched from a public API.
+3. **Save Data**: Click the "Save Data" button to store the fetched data in Firebase.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## Code Explanation
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### Authentication
 
-## Learn More
+- **Firebase Authentication**: Users can log in using Google Sign-In.
+- **Route Protection**: Users are redirected to the login page if they are not authenticated.
 
-To learn more about Next.js, take a look at the following resources:
+### Data Fetching
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **API Call**: Data is fetched from a public API.
+- **Display**: Data is displayed on the home page.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### Data Saving
 
-## Deploy on Vercel
+- **Firebase Realtime Database**: Data is saved to Firebase when the "Save" button is clicked.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Assumptions Made
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- The public API used for fetching data is stable and provides consistent results.
+- Firebase setup and configuration are correctly done as per Firebase documentation.
+
+
+## Contact
+
+If you have any questions or need further assistance, please contact:
+
+- **Connect me**: sk729584@gmail.com
